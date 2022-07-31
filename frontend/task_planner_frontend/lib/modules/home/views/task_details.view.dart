@@ -37,7 +37,7 @@ class TaskDetailsView extends StatelessWidget {
           height: 40,
           titleTextstyle: KCustomTextStyle.kMedium(context, 10),
           onTap: () async {
-            if (title == taskData.taskStatus) {
+            if (title != taskData.taskStatus) {
               bool status = await taskNotifier(renderUI: false).setTaskStatus(
                   context: context, taskId: taskData.taskId, taskStatus: title);
               if (status) {
@@ -57,12 +57,12 @@ class TaskDetailsView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                AwesomeDimensions.vSizedBox3,
+                AwesomeDimensions.vSizedBox1,
                 commonButton(title: "To do"),
-                AwesomeDimensions.vSizedBox3,
+                AwesomeDimensions.vSizedBox1,
                 commonButton(title: "Start"),
-                AwesomeDimensions.vSizedBox3,
-                commonButton(title: "End"),
+                AwesomeDimensions.vSizedBox1,
+                commonButton(title: "Done"),
               ],
             );
           });
@@ -153,7 +153,7 @@ class TaskDetailsView extends StatelessWidget {
                 children: [
                   AwesomeButton.roundedIconButton(
                       backgroundColor: Colors.red,
-                      width: 200,
+                      width: 180,
                       height: 40,
                       titleTextstyle: KCustomTextStyle.kMedium(context, 10),
                       onTap: () async {
@@ -170,7 +170,7 @@ class TaskDetailsView extends StatelessWidget {
                       title: "Delete"),
                   AwesomeButton.roundedIconButton(
                       backgroundColor: Colors.blue,
-                      width: 200,
+                      width: 180,
                       height: 40,
                       titleTextstyle: KCustomTextStyle.kMedium(context, 10),
                       onTap: () async {

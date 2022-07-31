@@ -99,7 +99,7 @@ class UpdateTaskView extends StatelessWidget {
                               return ActionChip(
                                 onPressed: () {
                                   taskNotifier(renderUI: false)
-                                      .addToSelectedCategory(value: id);
+                                      .addToSelectedCategory(kValue: id);
                                 },
                                 backgroundColor: taskNotifier(renderUI: true)
                                         .selectedTaskCategories

@@ -32,7 +32,7 @@ class _HomeViewState extends State<HomeView> {
 
     List<TaskData> fData = isFilterMode
         ? taskNotifier(renderUI: true).filteredTasks
-        : taskNotifier(renderUI: true).allTasks;
+        : taskNotifier(renderUI: false).allTasks;
 
     Widget filterChip({required String title}) {
       return AwesomeButton.roundedIconButton(
@@ -44,6 +44,7 @@ class _HomeViewState extends State<HomeView> {
         onTap: () {
           taskNotifier(renderUI: false).toggleFilterMode(filterMode: true);
           taskNotifier(renderUI: false).setTaskFilter(taskStatus: title);
+
           Navigator.pop(context);
         },
       );
@@ -114,7 +115,7 @@ class _HomeViewState extends State<HomeView> {
                               children: [
                                 filterChip(title: "To do"),
                                 filterChip(title: "Start"),
-                                filterChip(title: "End"),
+                                filterChip(title: "Done"),
                               ],
                             )
                           ],

@@ -74,7 +74,8 @@ class TaskBlock extends StatelessWidget {
                     AwesomeDimensions.vSizedBox2,
                     Row(children: [
                       const CircleAvatar(
-                        radius: 12,
+                        radius: 16,
+                        child: FlutterLogo(),
                       ),
                       AwesomeDimensions.vSizedBox2,
                       Text("1 Member",

@@ -24,36 +24,6 @@ class CreateTaskView extends StatelessWidget {
         Provider.of<TaskNotifier>(context, listen: renderUI);
 
     return Scaffold(
-      /* floatingActionButtonLocation:
-            FloatingActionButtonLocation.miniStartDocked,
-        floatingActionButton: AwesomeButton.roundedIconButton(
-          width: 200,
-          radius: 25,
-          onTap: () async {
-            List<int> ids =
-                taskNotifier(renderUI: false).selectedTaskCategories;
-            CreateTaskDto createTaskDto = CreateTaskDto(
-                taskTitle: _taskTitleController.text,
-                taskDescription: _taskDescriptionController.text,
-                taskScheduleAt: taskNotifier(renderUI: false)
-                    .selectedTaskTime!
-                    .toIso8601String(),
-                taskCategoryIds: ids);
-            bool status = await taskNotifier(
-              renderUI: false,
-            ).createTask(context: context, createTaskDto: createTaskDto);
-
-            if (status) {
-              Navigator.pushReplacementNamed(context, AppRoutes.homeRoute);
-            }
-          },
-          title: 'Create',
-          titleTextstyle: KCustomTextStyle.kBold(context, 20),
-          icon: const Icon(
-            Icons.add,
-            color: KConstantColors.whiteColor,
-          ),
-        ), */
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios,
@@ -109,7 +79,7 @@ class CreateTaskView extends StatelessWidget {
                             return ActionChip(
                               onPressed: () {
                                 taskNotifier(renderUI: false)
-                                    .addToSelectedCategory(value: id);
+                                    .addToSelectedCategory(kValue: id);
                               },
                               backgroundColor: taskNotifier(renderUI: true)
                                       .selectedTaskCategories
@@ -159,7 +129,7 @@ class CreateTaskView extends StatelessWidget {
                           context, AppRoutes.homeRoute);
                     }
                   },
-                  title: 'Update',
+                  title: 'Create',
                   titleTextstyle: KCustomTextStyle.kBold(context, 20),
                 ),
               ),
