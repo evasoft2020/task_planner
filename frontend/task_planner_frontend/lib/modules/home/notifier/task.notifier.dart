@@ -63,9 +63,9 @@ class TaskNotifier extends ChangeNotifier {
   List<int> get selectedTaskCategories => _selectedTaskCategories;
 
   addToSelectedCategory({required int kValue}) {
-    _selectedTaskCategories.contains(kValue)
-        ? _selectedTaskCategories.remove(kValue)
-        : _selectedTaskCategories.add(kValue);
+    !_selectedTaskCategories.contains(kValue)
+        ? _selectedTaskCategories.add(kValue)
+        : _selectedTaskCategories.remove(kValue);
 
     notifyListeners();
   }
@@ -82,7 +82,6 @@ class TaskNotifier extends ChangeNotifier {
     try {
       Map result =
           await taskRepository.createTask(createTaskDto: createTaskDto);
-      debugPrint(result.toString());
       bool status = result['status'];
       return status;
     } on EasyException catch (exception) {

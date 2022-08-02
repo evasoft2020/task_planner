@@ -133,9 +133,11 @@ class TaskDetailsView extends StatelessWidget {
             ),
             AwesomeDimensions.vSizedBox2,
             SizedBox(
-              width: 200,
+              width: 400,
               height: 50,
               child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
                     return Chip(
                       label: Text(

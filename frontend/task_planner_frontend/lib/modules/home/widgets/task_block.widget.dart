@@ -82,26 +82,20 @@ class TaskBlock extends StatelessWidget {
                           style: KCustomTextStyle.kBold(context, 8)),
                     ]),
                     SizedBox(
-                      height: 150,
                       width: 400,
+                      height: 100,
                       child: ListView.builder(
                           scrollDirection: Axis.horizontal,
-                          itemCount: taskData.taskCategories.length,
                           itemBuilder: (context, index) {
-                            return Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 2),
-                              child: Chip(
-                                backgroundColor:
-                                    KConstantColors.darkColor.withOpacity(0.5),
-                                label: Text(
-                                  taskData
-                                      .taskCategories[index].taskCategoryTitle,
-                                  style: KCustomTextStyle.kMedium(context, 8),
-                                ),
+                            return Chip(
+                              label: Text(
+                                taskData
+                                    .taskCategories[index].taskCategoryTitle,
+                                style: KCustomTextStyle.kMedium(context, 8),
                               ),
                             );
-                          }),
+                          },
+                          itemCount: taskData.taskCategories.length),
                     ),
                     AwesomeDimensions.vSizedBox1,
                     Text(

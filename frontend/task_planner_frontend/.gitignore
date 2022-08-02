@@ -47,4 +47,4 @@ app.*.map.json
 /android/app/release
 
 #docs
-/frontend/task_planner_frontend/inux
+/frontend/task_planner_frontend/linux

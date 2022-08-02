@@ -6,6 +6,5 @@ class ApiRoutes {
   static const deleteTaskRoute = "task/delete/";
   static const setTaskStatusRoute = "task/set_status";
   static const setArchiveTaskRoute = "task/set_archive";
-  static const setArchivedTaskRoute = "task/set_archive";
   static const fetchTaskCategoriesRoute = "task_category/fetch_task_category";
 }
